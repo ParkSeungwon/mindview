@@ -84,11 +84,12 @@ public:
 	}	
 	
 	void insert_edge(T a, T b, std::complex<double> weight) {
-		Vertex<T> *va, *vb;
+		Vertex<T> *va = nullptr, *vb = nullptr;
 		for(Vertex<T>* p = root; p; p = p->vertex) {
 			if(p->data == a) va = p;
 			if(p->data == b) vb = p;
 		}
+		if(!va || !vb) throw "no such vertex";
 		va->edge = insert(va->edge, vb, weight);
 	}
 
