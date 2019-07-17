@@ -262,7 +262,6 @@ void GraphSketch::popup(File f) {
 			});
 		auto *pv = gv_.find_vertex(cut_);
 		string path = pv->data.data.full_path = f.full_path + '/' + cut_.name;
-		cout << cut_.full_path << endl << path << endl;
 		experimental::filesystem::rename(cut_.full_path, path);
 		cut_.full_path = ""; 
 		}
