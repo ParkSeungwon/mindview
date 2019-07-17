@@ -236,20 +236,33 @@ void GraphSketch::popup(File f) {
 			dia.add_button("_Virtual", 6);
 			dia.add_button("Shrin_K", 8);
 		} else dia.add_button("_Delete", 7);
-		dia.add_button("Cancel",0);
+		dia.add_button("Cu_T", 10);
+		if(cut_.full_path != "" && f.type == File::Type::Directory)
+			dia.add_button("_Paste", 11);
 		result = dia.run();
 	}
 
 	switch(result) {
-		case 1: shape_chooser(f); break;
-		case 2: color_chooser(f); break;
-		case 3: app_chooser(f); break;
-		case 4: resize(f); break;
-		case 5: file_chooser(f); break;
-		case 6: virtual_chooser(f); break;
-		case 7: gv_.remove_vertex(f); break;
-		case 8: gv_.toggle_shrink(f); break;
-		case 9: font_chooser(f); break;
-		default:;
+	case 1: shape_chooser(f); break;
+	case 2: color_chooser(f); break;
+	case 3: app_chooser(f); break;
+	case 4: resize(f); break;
+	case 5: file_chooser(f); break;
+	case 6: virtual_chooser(f); break;
+	case 7: gv_.remove_vertex(f); break;
+	case 8: gv_.toggle_shrink(f); break;
+	case 9: font_chooser(f); break;
+	case 10: cut_ = f; break;
+	case 11: {
+		gv_.move(cut_, f);
+		gv_.sub_apply(cut_, [cut = this->cut_, f](NodeExpr<File> &n) { 
+				size_t i = n.data.full_path.rfind('/' + cut.name + '/' + n.data.name);
+				if(i != string::npos) n.data.full_path.replace(0, i, f.full_path);
+			});
+		auto *pv = gv_.find_vertex(cut_);
+		pv->data.data.full_path = f.full_path + '/' + cut_.name;
+		cut_.full_path = ""; 
+		}
+	default: ;
 	}
 }

@@ -31,6 +31,7 @@ int main(int ac, char **av)
 	namespace fs = experimental::filesystem;
 	File fl{file};
 	if(to != "default") { 
+		File fto{to};
 		try {
 			auto *p = gr.find_vertex(fl);
 			File from = gr.find_parent(fl);//throws, if this line passes, do insert edge
@@ -39,11 +40,14 @@ int main(int ac, char **av)
 			fs::rename(fl.full_path, fn);
 			gr.insert_edge(File{to}, fl, {30, 30});
 			if(p) p->data.data = File{fn};
+			gr.sub_apply(p->data, [to](NodeExpr<File> &f) { f.data.full_path =
+					fs::path{to} /= fs::path{f.data.full_path}.filename(); });
 		} catch(const char *e) {
 			cerr << e << endl;
 			return 4;
 		}
 	} else {
+		File fren{rename};
 		auto *p = gr.find_vertex(fl);//move next line
 		fs::rename(p->data.data.full_path, rename);
 		if(p) p->data.data = File(rename);//return error code check

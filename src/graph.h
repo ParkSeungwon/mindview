@@ -83,6 +83,11 @@ public:
 		clearv();
 	}	
 	
+	void move(T from, T to) {
+		auto *v = find_vertex(from);
+		remove_edge(find_parent(from), from);
+		insert_edge(to, from, {30, 30});
+	}
 	void insert_edge(T a, T b, std::complex<double> weight) {
 		Vertex<T> *va = nullptr, *vb = nullptr;
 		for(Vertex<T>* p = root; p; p = p->vertex) {

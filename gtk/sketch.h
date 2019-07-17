@@ -31,7 +31,7 @@ protected:
 
 private:
 	Point from_, to_, root_position_;
-	File root_;
+	File root_, cut_;
 	bool readonly_ = false;
 	void shape_chooser(File f);
 	void virtual_chooser(File f);
