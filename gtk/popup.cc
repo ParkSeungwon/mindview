@@ -116,8 +116,8 @@ void GraphSketch::shape_chooser(File f) {
 			v->data.data.name = ad.name.get_text();
 			v->data.data.full_path.replace(f.full_path.rfind(f.name), f.name.size(), 
 					v->data.data.name);
-			gv_.sub_apply(f, [f, v](NodeExpr<File> &n) { n.data.full_path.replace(0,
-					f.full_path.size(), v->data.data.full_path); });
+			gv_.sub_apply(v->data, [f, v](NodeExpr<File> &n) { n.data.full_path.replace(
+					0, f.full_path.size(), v->data.data.full_path); });
 			experimental::filesystem::rename(f.full_path, v->data.data.full_path);
 		}
 	}
