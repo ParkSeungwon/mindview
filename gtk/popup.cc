@@ -1,5 +1,6 @@
 #include<functional>
 #include<chrono>
+#include<experimental/filesystem>
 #include"gtk/popup.h"
 #include"gtk/sketch.h"
 using namespace std;
@@ -260,7 +261,9 @@ void GraphSketch::popup(File f) {
 				if(i != string::npos) n.data.full_path.replace(0, i, f.full_path);
 			});
 		auto *pv = gv_.find_vertex(cut_);
-		pv->data.data.full_path = f.full_path + '/' + cut_.name;
+		string path = pv->data.data.full_path = f.full_path + '/' + cut_.name;
+		cout << cut_.full_path << endl << path << endl;
+		experimental::filesystem::rename(cut_.full_path, path);
 		cut_.full_path = ""; 
 		}
 	default: ;
