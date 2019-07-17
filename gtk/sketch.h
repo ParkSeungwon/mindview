@@ -38,6 +38,7 @@ private:
 	void color_chooser(File f);
 	void file_chooser(File f);
 	void font_chooser(File f);
+	void paste(File f);
 	void resize(File f);
 	void repaint();
 };

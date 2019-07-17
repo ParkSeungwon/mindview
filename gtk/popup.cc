@@ -112,8 +112,14 @@ void GraphSketch::shape_chooser(File f) {
 		v->data.color[1][3] = ad.arrow.get_value();//arrow rbg'a'
 		v->data.color[2][3] = ad.shape.get_value();//outline shape a
 		bool same_name = false;
-		if(f.name != ad.name.get_text())//if changed & no same name 
-			v->data.data.name = ad.name.get_text();//name is just outlook
+		if(f.name != ad.name.get_text()) {//if changed & no same name 
+			v->data.data.name = ad.name.get_text();
+			v->data.data.full_path.replace(f.full_path.rfind(f.name), f.name.size(), 
+					v->data.data.name);
+			gv_.sub_apply(f, [f, v](NodeExpr<File> &n) { n.data.full_path.replace(0,
+					f.full_path.size(), v->data.data.full_path); });
+			experimental::filesystem::rename(f.full_path, v->data.data.full_path);
+		}
 	}
 }
 
@@ -164,7 +170,7 @@ void GraphSketch::color_chooser(File f) {
 
 void app_chooser(File f) {
 	const char* p[] = {"h", "hpp", "cc", "cpp", "c", "py", "txt", "js", "html", "css"
-					, "tex"};
+					, "tex", "sh"};
 	string command, ext = f.full_path.substr(f.full_path.rfind('.') + 1);
 	for(auto *a : p) if(ext == a) command = "gvim --remote-tab-silent '";
 	if(f.name == "Makefile") command = "gvim --remote-tab-silent '";
@@ -222,6 +228,17 @@ void GraphSketch::resize(File f) {
 			dia.width.get_value_as_int(), dia.height.get_value_as_int());
 }
 
+void GraphSketch::paste(File f) {
+	gv_.move(cut_, f);
+	int sz = cut_.full_path.rfind(cut_.name) - 1;
+	gv_.sub_apply(cut_, [sz, f] (NodeExpr<File> &n) {
+			n.data.full_path.replace(0, sz, f.full_path);});
+	auto *pv = gv_.find_vertex(cut_);
+	string path = pv->data.data.full_path = f.full_path + '/' + cut_.name;
+	experimental::filesystem::rename(cut_.full_path, path);
+	cut_.full_path = ""; 
+}
+
 void GraphSketch::popup(File f) {
 	int result;
 	{
@@ -235,36 +252,26 @@ void GraphSketch::popup(File f) {
 		if(f.type == File::Type::Directory) dia.add_button("_Expose", 5);
 		if(f.type != File::Type::Virtual) {
 			dia.add_button("_Virtual", 6);
-			dia.add_button("Shrin_K", 8);
+			dia.add_button("shrin_K", 8);
 		} else dia.add_button("_Delete", 7);
-		dia.add_button("Cu_T", 10);
+		dia.add_button("cu_T", 10);
 		if(cut_.full_path != "" && f.type == File::Type::Directory)
 			dia.add_button("_Paste", 11);
 		result = dia.run();
 	}
 
 	switch(result) {
-	case 1: shape_chooser(f); break;
-	case 2: color_chooser(f); break;
-	case 3: app_chooser(f); break;
-	case 4: resize(f); break;
-	case 5: file_chooser(f); break;
-	case 6: virtual_chooser(f); break;
-	case 7: gv_.remove_vertex(f); break;
-	case 8: gv_.toggle_shrink(f); break;
-	case 9: font_chooser(f); break;
-	case 10: cut_ = f; break;
-	case 11: {
-		gv_.move(cut_, f);
-		gv_.sub_apply(cut_, [cut = this->cut_, f](NodeExpr<File> &n) { 
-				size_t i = n.data.full_path.rfind('/' + cut.name + '/' + n.data.name);
-				if(i != string::npos) n.data.full_path.replace(0, i, f.full_path);
-			});
-		auto *pv = gv_.find_vertex(cut_);
-		string path = pv->data.data.full_path = f.full_path + '/' + cut_.name;
-		experimental::filesystem::rename(cut_.full_path, path);
-		cut_.full_path = ""; 
-		}
-	default: ;
+		case 1: shape_chooser(f); break;
+		case 2: color_chooser(f); break;
+		case 3: app_chooser(f); break;
+		case 4: resize(f); break;
+		case 5: file_chooser(f); break;
+		case 6: virtual_chooser(f); break;
+		case 7: gv_.remove_vertex(f); break;
+		case 8: gv_.toggle_shrink(f); break;
+		case 9: font_chooser(f); break;
+		case 10: cut_ = f; break;
+		case 11: paste(f); break;
+		default: ;
 	}
 }
