@@ -1,4 +1,3 @@
-#include<any>
 #include<typeinfo>
 #include<iostream>
 #include"option.h"
@@ -16,19 +15,25 @@ bool CMDoption::args(int ac, char **av)
 		if(av[i][0] == '-') {
 			int match=0;
 			for(auto& [param, desc, value] : options_) {
-				if(!strncmp(&av[i][1], param, strlen(av[i])-1)) {
+				if(!strcmp(&av[i][1], param)) {//complete match
+					match = 1;
+					val = &value;
+					break;
+				} else if(!strncmp(&av[i][1], param, strlen(av[i])-1)){//partial match
 					match++;
 					val = &value;
-					if(value.type() == typeid(bool)) value = true;
 				}
 			}
 			if(match != 1) return print_help(av[0]);
+			else if(val->type() == typeid(bool)) *val = true;
 		} else {
 			if(!val) return print_help(av[0]);
 			if(val->type() == typeid(int)) *val = atoi(av[i]);
 			else if(val->type() == typeid(double) || val->type() == typeid(float))
 				*val = atof(av[i]);
 			else if(val->type() == typeid(const char*)) *val = (const char*)av[i];
+			else if(val->type() == typeid(FileExpansion))
+				*val = any_cast<FileExpansion>(*val) + av[i];
 		}
 	}
 	return true;
@@ -45,6 +50,7 @@ bool CMDoption::print_help(char *av0)
 		else if(val.type() == typeid(float)) cout << any_cast<float>(val);
 		else if(val.type() == typeid(const char*)) cout << any_cast<const char*>(val);
 		else if(val.type() == typeid(bool)) cout << "false";
+		else if(val.type() == typeid(FileExpansion)) cout << "none";
 		cout << ")\n";
 	}
 	return false;
