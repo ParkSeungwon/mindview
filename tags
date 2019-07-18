@@ -1,0 +1,270 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+A	tst/test.cc	19;"	s	file:
+Arrow	gtk/drawable.cc	131;"	f	class:Arrow
+Arrow	gtk/drawable.h	52;"	s	inherits:Line
+ArrowShape	src/nodeexpr.h	8;"	c
+AttributeDialog	gtk/popup.cc	19;"	f	class:AttributeDialog
+AttributeDialog	gtk/popup.h	3;"	c	inherits:Gtk::Dialog
+B	tst/test.cc	22;"	s	file:	inherits:A
+Box	gtk/drawable.cc	163;"	f	class:Box
+Box	gtk/drawable.h	57;"	s	inherits:Line
+C	tst/test.cc	25;"	s	file:	inherits:B
+CATCH_CONFIG_MAIN	tst/catch.cpp	1;"	d	file:
+CMDoption	src/option.cc	6;"	f	class:CMDoption
+CMDoption	src/option.h	8;"	c
+Curve	gtk/drawable.cc	176;"	f	class:Curve
+Curve	gtk/drawable.h	62;"	c	inherits:Box
+Diamond	gtk/drawable.cc	191;"	f	class:Diamond
+Diamond	gtk/drawable.h	69;"	s	inherits:Line
+Diamond	gtk/popup.h	13;"	m	class:AttributeDialog
+Diamond	src/nodeexpr.h	7;"	m	class:OutlineShape
+Direct	gtk/popup.h	14;"	m	class:AttributeDialog
+Directory	src/nodeexpr.h	78;"	m	class:File::Type
+Drawable	gtk/drawable.h	17;"	c
+Edge	src/graph.h	12;"	s
+Ellipse	gtk/drawable.cc	206;"	f	class:Ellipse
+Ellipse	gtk/drawable.h	74;"	s	inherits:Drawable
+Ellipse	gtk/popup.h	13;"	m	class:AttributeDialog
+File	src/nodeexpr.cc	14;"	f	class:File
+File	src/nodeexpr.h	73;"	s
+File	src/nodeexpr.h	78;"	m	class:File::Type
+FileExpansion	src/option.h	26;"	c
+Graph	src/graph.h	39;"	c
+GraphSketch	gtk/sketch.cc	36;"	f	class:GraphSketch
+GraphSketch	gtk/sketch.h	18;"	c	inherits:SketchBook
+GraphView	gtk/graphview.h	8;"	c	inherits:Graph
+Line	gtk/drawable.cc	114;"	f	class:Line
+Line	gtk/drawable.h	42;"	c	inherits:Drawable
+MUL	gtk/drawable.cc	3;"	d	file:
+NodeExpr	src/nodeexpr.h	10;"	s
+NodeExpr	src/nodeexpr.h	14;"	f	struct:NodeExpr
+OutlineShape	src/nodeexpr.h	7;"	c
+Picture	gtk/popup.h	13;"	m	class:AttributeDialog
+Picture	src/nodeexpr.h	7;"	m	class:OutlineShape
+Pix	gtk/drawable.cc	229;"	f	class:Pix
+Pix	gtk/drawable.h	80;"	c	inherits:Box
+Plant	gtk/popup.h	14;"	m	class:AttributeDialog
+Plant	src/nodeexpr.h	8;"	m	class:ArrowShape
+Point	gtk/drawable.h	11;"	f	struct:Point
+Point	gtk/drawable.h	12;"	f	struct:Point
+Point	gtk/drawable.h	9;"	s	inherits:std::complex
+Rect	gtk/popup.h	13;"	m	class:AttributeDialog
+Rect	src/nodeexpr.h	7;"	m	class:OutlineShape
+ResizeDialog	gtk/popup.cc	53;"	f	class:ResizeDialog
+ResizeDialog	gtk/popup.h	20;"	c	inherits:Gtk::Dialog
+SketchBook	gtk/sketch.cc	9;"	f	class:SketchBook
+SketchBook	gtk/sketch.h	6;"	c	inherits:Gtk::DrawingArea
+Text	gtk/drawable.cc	78;"	f	class:Text
+Text	gtk/drawable.h	31;"	c	inherits:Drawable
+Type	src/nodeexpr.h	78;"	c	struct:File
+Vertex	src/graph.h	21;"	s
+Virtual	src/nodeexpr.h	78;"	m	class:File::Type
+VirtualDialog	gtk/popup.cc	9;"	f	class:VirtualDialog
+VirtualDialog	gtk/popup.h	35;"	c	inherits:Gtk::Dialog
+Win	gtk/sketch.cc	112;"	f	class:Win
+Win	gtk/sketch.h	46;"	c	inherits:Gtk::Window
+YIELD_POINT	gtk/graphview.h	6;"	d
+al	gtk/popup.h	15;"	m	class:AttributeDialog
+app_chooser	gtk/popup.cc	172;"	f
+args	src/option.cc	11;"	f	class:CMDoption
+arrow	gtk/popup.h	9;"	m	class:AttributeDialog
+arrowline	src/nodeexpr.h	23;"	m	struct:NodeExpr
+begin	src/option.h	33;"	f	class:FileExpansion
+begin_	gtk/sketch.h	15;"	m	class:SketchBook
+breadth	src/graph.h	157;"	f	class:Graph
+breadth	src/graph.h	290;"	f	class:Graph
+bridge	src/graph.h	164;"	f	class:Graph
+cc	tst/test.cc	35;"	v
+clear_drawables	gtk/graphview.h	113;"	f	class:GraphView
+clearv	src/graph.h	218;"	f	class:Graph
+color	gtk/drawable.h	26;"	m	class:Drawable
+color	src/nodeexpr.h	24;"	m	struct:NodeExpr
+color_chooser	gtk/popup.cc	144;"	f	class:GraphSketch
+cut_	gtk/sketch.h	34;"	m	class:GraphSketch
+data	src/graph.h	101;"	f	class:Graph
+data	src/graph.h	104;"	f	class:Graph
+data	src/graph.h	23;"	m	struct:Vertex
+data	src/nodeexpr.h	12;"	m	struct:NodeExpr
+depth	src/graph.h	152;"	f	class:Graph
+depth	src/graph.h	278;"	f	class:Graph
+dijkstra	src/graph.h	140;"	f	class:Graph
+distance	src/graph.h	226;"	m	class:Graph
+drawables_	gtk/graphview.h	109;"	m	class:GraphView
+edge	src/graph.h	18;"	m	struct:Edge
+edge	src/graph.h	25;"	m	struct:Vertex
+efree	src/graph.h	303;"	f	class:Graph
+end	gtk/drawable.h	90;"	m	class:Pix
+end	src/option.h	34;"	f	class:FileExpansion
+end_	gtk/drawable.h	28;"	m	class:Drawable
+end_	gtk/sketch.h	15;"	m	class:SketchBook
+exist	src/nodeexpr.cc	24;"	f	class:File
+file_chooser	gtk/popup.cc	183;"	f	class:GraphSketch
+filename	gtk/drawable.h	89;"	m	class:Pix
+find	src/graph.h	274;"	f	class:Graph
+find_closest	src/graph.h	254;"	f	class:Graph
+find_entry	src/graph.h	334;"	f	class:Graph
+find_greed	src/graph.h	355;"	f	class:Graph
+find_parent	src/graph.h	53;"	f	class:Graph
+find_vertex	src/graph.h	59;"	f	class:Graph
+fixed_ratio	gtk/popup.h	25;"	m	class:ResizeDialog
+floyd	src/graph.h	122;"	f	class:Graph
+font_chooser	gtk/popup.cc	213;"	f	class:GraphSketch
+font_desc	src/nodeexpr.h	20;"	m	struct:NodeExpr
+font_desc_	gtk/drawable.h	39;"	m	class:Text
+from_	gtk/sketch.h	33;"	m	class:GraphSketch
+full_path	src/nodeexpr.h	77;"	m	struct:File
+generate_drawables	gtk/graphview.h	118;"	f	class:GraphView
+generate_drawables	gtk/graphview.h	86;"	f	class:GraphView
+get	src/option.h	13;"	f	class:CMDoption
+get_arrowline	gtk/graphview.h	48;"	f	class:GraphView
+get_height	gtk/graphview.h	61;"	f	class:GraphView
+get_line	src/nodeexpr.cc	9;"	f
+get_outline	gtk/graphview.h	40;"	f	class:GraphView
+get_width	gtk/graphview.h	57;"	f	class:GraphView
+gfree	src/graph.h	309;"	f	class:Graph
+greedy	src/graph.h	173;"	f	class:Graph
+gv_	gtk/sketch.h	26;"	m	class:GraphSketch
+h	gtk/drawable.h	88;"	m	class:Pix
+hb1	gtk/popup.h	17;"	m	class:AttributeDialog
+hb2	gtk/popup.h	17;"	m	class:AttributeDialog
+hb3	gtk/popup.h	17;"	m	class:AttributeDialog
+hb4	gtk/popup.h	17;"	m	class:AttributeDialog
+height	gtk/popup.h	24;"	m	class:ResizeDialog
+height	src/nodeexpr.h	26;"	m	struct:NodeExpr
+hhb	gtk/popup.h	29;"	m	class:ResizeDialog
+hl	gtk/popup.h	28;"	m	class:ResizeDialog
+image	gtk/drawable.h	87;"	m	class:Pix
+initialized	gtk/drawable.h	91;"	m	class:Pix
+insert	src/graph.h	187;"	f	class:Graph
+insert	src/graph.h	197;"	f	class:Graph
+insert_edge	src/graph.h	91;"	f	class:Graph
+insert_vertex	src/graph.h	47;"	f	class:Graph
+is_bridge	src/graph.h	208;"	f	class:Graph
+line	gtk/popup.h	12;"	m	class:AttributeDialog
+line_bts	gtk/popup.h	7;"	m	class:AttributeDialog
+line_width	gtk/drawable.cc	6;"	f	class:Drawable
+line_width_	gtk/drawable.h	27;"	m	class:Drawable
+main	gtk/mindv.cpp	11;"	f
+main	gtk/mv_mind.cpp	8;"	f
+main	gtk/test.cpp	7;"	f
+main	gtk/upgrade.cpp	41;"	f
+move	src/graph.h	86;"	f	class:Graph
+name	gtk/popup.h	8;"	m	class:AttributeDialog
+name	src/nodeexpr.h	77;"	m	struct:File
+on_button_press_event	gtk/sketch.cc	106;"	f	class:Win
+on_button_press_event	gtk/sketch.cc	91;"	f	class:GraphSketch
+on_button_release_event	gtk/sketch.cc	72;"	f	class:GraphSketch
+on_change	gtk/popup.cc	76;"	f	class:ResizeDialog
+on_draw	gtk/sketch.cc	19;"	f	class:SketchBook
+on_toggle	gtk/popup.cc	86;"	f	class:ResizeDialog
+operator ()	gtk/drawable.cc	120;"	f	class:Line
+operator ()	gtk/drawable.cc	179;"	f	class:Curve
+operator ()	gtk/drawable.cc	211;"	f	class:Ellipse
+operator ()	gtk/drawable.cc	235;"	f	class:Pix
+operator ()	gtk/drawable.cc	88;"	f	class:Text
+operator +	src/option.h	29;"	f	class:FileExpansion
+operator <<	src/graph.h	388;"	f
+operator <<	src/nodeexpr.cc	34;"	f
+operator <<	src/nodeexpr.cc	46;"	f
+operator <<	src/nodeexpr.h	31;"	f
+operator <<	tst/test.cc	53;"	f
+operator <<	tst/test.cc	54;"	f
+operator ==	src/nodeexpr.cc	29;"	f	class:File
+operator ==	src/nodeexpr.h	16;"	f	struct:NodeExpr
+operator >>	src/graph.h	377;"	f
+operator >>	src/nodeexpr.cc	52;"	f
+operator >>	src/nodeexpr.h	52;"	f
+operator T	src/nodeexpr.h	15;"	f	struct:NodeExpr
+options_	src/option.h	19;"	m	class:CMDoption
+outline	gtk/popup.h	12;"	m	class:AttributeDialog
+outline	src/nodeexpr.h	22;"	m	struct:NodeExpr
+outline_bts	gtk/popup.h	7;"	m	class:AttributeDialog
+override	gtk/drawable.h	84;"	m	class:Pix
+parent_	gtk/sketch.h	27;"	m	class:GraphSketch
+paste	gtk/popup.cc	232;"	f	class:GraphSketch
+path_find_color_	gtk/graphview.h	110;"	m	class:GraphView
+pick	gtk/graphview.h	95;"	f	class:GraphView
+picture_file	src/nodeexpr.h	27;"	m	struct:NodeExpr
+points_	gtk/drawable.h	49;"	m	class:Line
+popup	gtk/popup.cc	243;"	f	class:GraphSketch
+prim	src/graph.h	108;"	f	class:Graph
+print_help	src/option.cc	42;"	f	class:CMDoption
+rate	gtk/popup.h	32;"	m	class:ResizeDialog
+read	gtk/upgrade.cpp	8;"	f
+readonly	gtk/sketch.cc	60;"	f	class:GraphSketch
+readonly_	gtk/sketch.h	35;"	m	class:GraphSketch
+refresh	gtk/sketch.cc	25;"	f	class:SketchBook
+remove_edge	src/graph.h	242;"	f	class:Graph
+remove_edge	src/graph.h	64;"	f	class:Graph
+remove_vertex	src/graph.h	230;"	f	class:Graph
+remove_vertex	src/graph.h	69;"	f	class:Graph
+repaint	gtk/sketch.cc	65;"	f	class:GraphSketch
+resize	gtk/popup.cc	223;"	f	class:GraphSketch
+root	src/graph.h	185;"	m	class:Graph
+root_	gtk/sketch.h	34;"	m	class:GraphSketch
+root_position_	gtk/sketch.h	33;"	m	class:GraphSketch
+scwin_	gtk/sketch.h	54;"	m	class:Win
+set_arrow_color	gtk/graphview.h	77;"	f	class:GraphView
+set_arrowline	gtk/graphview.h	44;"	f	class:GraphView
+set_drawables	gtk/sketch.cc	14;"	f	class:SketchBook
+set_font	gtk/drawable.cc	108;"	f	class:Text
+set_font	gtk/graphview.h	32;"	f	class:GraphView
+set_outline	gtk/graphview.h	36;"	f	class:GraphView
+set_outline_color	gtk/graphview.h	81;"	f	class:GraphView
+set_path_find_color	gtk/graphview.h	99;"	f	class:GraphView
+set_picture_file	gtk/graphview.h	69;"	f	class:GraphView
+set_rgba	gtk/drawable.cc	155;"	f	class:Drawable
+set_rgba	gtk/graphview.h	159;"	f	class:GraphView
+set_show	gtk/graphview.h	16;"	f	class:GraphView
+set_shrink	gtk/graphview.h	24;"	f	class:GraphView
+set_text_color	gtk/graphview.h	73;"	f	class:GraphView
+set_tooltip	gtk/graphview.h	65;"	f	class:GraphView
+set_width_height	gtk/graphview.h	52;"	f	class:GraphView
+shape	gtk/popup.h	9;"	m	class:AttributeDialog
+shape_chooser	gtk/popup.cc	92;"	f	class:GraphSketch
+shortest	src/graph.h	316;"	f	class:Graph
+show	src/nodeexpr.h	18;"	m	struct:NodeExpr
+shrink	src/nodeexpr.h	19;"	m	struct:NodeExpr
+sketch_	gtk/sketch.h	50;"	m	class:Win
+sl	gtk/popup.h	15;"	m	class:AttributeDialog
+start	gtk/drawable.h	90;"	m	class:Pix
+start_	gtk/drawable.h	28;"	m	class:Drawable
+sub_apply	src/graph.h	74;"	f	class:Graph
+textview	gtk/popup.h	39;"	m	class:VirtualDialog
+to_	gtk/sketch.h	33;"	m	class:GraphSketch
+toggle_show	gtk/graphview.h	20;"	f	class:GraphView
+toggle_shrink	gtk/graphview.h	28;"	f	class:GraphView
+tooltip	src/nodeexpr.h	27;"	m	struct:NodeExpr
+topology	src/graph.h	114;"	f	class:Graph
+txt	gtk/drawable.cc	105;"	f	class:Text
+txt_	gtk/drawable.h	39;"	m	class:Text
+union_set	src/graph.h	228;"	m	class:Graph
+unite	src/graph.h	350;"	f	class:Graph
+v	src/graph.h	16;"	m	struct:Edge
+v	src/graph.h	24;"	m	struct:Vertex
+v	src/option.h	36;"	m	class:FileExpansion
+vb	gtk/popup.h	16;"	m	class:AttributeDialog
+vb	gtk/popup.h	42;"	m	class:VirtualDialog
+vertex	src/graph.h	17;"	m	struct:Edge
+vertex	src/graph.h	26;"	m	struct:Vertex
+virtual_chooser	gtk/popup.cc	127;"	f	class:GraphSketch
+vpNpos	gtk/graphview.h	108;"	m	class:GraphView
+w	gtk/drawable.h	88;"	m	class:Pix
+waypoint	src/graph.h	227;"	m	class:Graph
+weight	src/graph.h	14;"	m	struct:Edge
+whb	gtk/popup.h	29;"	m	class:ResizeDialog
+width	gtk/popup.h	24;"	m	class:ResizeDialog
+width	src/nodeexpr.h	26;"	m	struct:NodeExpr
+wl	gtk/popup.h	28;"	m	class:ResizeDialog
+x	gtk/drawable.h	13;"	f	struct:Point
+y	gtk/drawable.h	14;"	f	struct:Point
+~A	tst/test.cc	20;"	f	struct:A
+~C	tst/test.cc	26;"	f	struct:C
+~Graph	src/graph.h	42;"	f	class:Graph
+~GraphSketch	gtk/sketch.cc	51;"	f	class:GraphSketch
+~GraphView	gtk/graphview.h	13;"	f	class:GraphView
