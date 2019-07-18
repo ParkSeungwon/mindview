@@ -118,7 +118,8 @@ void GraphSketch::shape_chooser(File f) {
 					v->data.data.name);
 			gv_.sub_apply(v->data, [f, v](NodeExpr<File> &n) { n.data.full_path.replace(
 					0, f.full_path.size(), v->data.data.full_path); });
-			experimental::filesystem::rename(f.full_path, v->data.data.full_path);
+			if(f.type != File::Type::Virtual)
+				experimental::filesystem::rename(f.full_path, v->data.data.full_path);
 		}
 	}
 }

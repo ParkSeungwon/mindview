@@ -15,8 +15,8 @@ File::File(std::string s)
 {
 	path p = path(s);
 	path abs_path = canonical(p);
-	name = p.filename().string();
-	if(is_symlink(p)) full_path =(canonical(p.parent_path()) /= p.filename()).string();
+	name = abs_path.filename().string();
+	if(is_symlink(p)) full_path = (canonical(p.parent_path()) / p.filename()).string();
 	else full_path = abs_path.string();
 	type = is_directory(abs_path) ? File::Type::Directory : File::Type::File;
 }
