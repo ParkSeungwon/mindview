@@ -20,9 +20,13 @@ int main(int ac, char** av)
 	int i = 0;
 	auto app = Gtk::Application::create(i, av);
 	Win win{co.get<const char*>("directory"), co.get<int>("x"), co.get<int>("y")};
-	if(co.get<bool>("readonly")) win.sketch_.readonly(true);
+	string title = "File Browser inspired by MindMap";
+	if(co.get<bool>("readonly")) {
+		win.sketch_.readonly(true);
+		title += "(readonly)";
+	}
 //	win.sketch_.set_drawables(a.first, a.second);
-	win.set_title("File Browser inspired by MindMap");
+	win.set_title(title);
 	return app->run(win);
 }
 
