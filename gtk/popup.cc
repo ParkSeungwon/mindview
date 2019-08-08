@@ -171,7 +171,7 @@ void GraphSketch::color_chooser(File f) {
 
 void app_chooser(File f) {
 	const char* p[] = {"h", "hpp", "cc", "cpp", "c", "py", "txt", "js", "html", "css"
-					, "tex", "sh"};
+					, "tex", "sh", "ts"};
 	string command, ext = f.full_path.substr(f.full_path.rfind('.') + 1);
 	for(auto *a : p) if(ext == a) command = "gvim --remote-tab-silent '";
 	if(f.name == "Makefile") command = "gvim --remote-tab-silent '";
