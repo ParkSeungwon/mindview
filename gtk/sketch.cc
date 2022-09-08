@@ -103,11 +103,11 @@ bool GraphSketch::on_button_press_event(GdkEventButton* e)
 	return true;//does not propagate
 }
 
-bool Win::on_button_press_event(GdkEventButton* e)
-{
-	cout << e->x << ' ' << e->y << endl;
-	return true;
-}
+//bool Win::on_button_press_event(GdkEventButton* e)
+//{
+//	cout << e->x << ' ' << e->y << endl;
+//	return true;
+//}
 
 Win::Win(string s, int x, int y) : sketch_{s, x, y, *this}
 {

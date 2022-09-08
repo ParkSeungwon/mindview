@@ -162,9 +162,10 @@ void GraphSketch::color_chooser(File f) {
 }
 
 void app_chooser(File f) {
-	const char* p[] = {"h", "hpp", "cc", "cpp", "c", "py", "txt", "js", "html", "css"
+	const char* p[] = {"h", "hpp", "cc", "cpp", "c", "py", "txt", "html", "css"
 					, "tex"};
 	string command, ext = f.full_path.substr(f.full_path.rfind('.') + 1);
+	if(ext == "jsx" || ext == "js" || ext == "tsx") command = "code '";
 	for(auto *a : p) if(ext == a) command = "gvim --remote-tab-silent '";
 	if(f.name == "Makefile") command = "gvim --remote-tab-silent '";
 	if(command == "") command = "python -c 'import webbrowser,sys; webbrowser.open(sys.argv[1])' '";

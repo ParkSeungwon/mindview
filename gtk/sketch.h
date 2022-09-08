@@ -49,7 +49,7 @@ public:
 	GraphSketch sketch_;
 
 protected:
-	bool on_button_press_event(GdkEventButton* e);
+	//bool on_button_press_event(GdkEventButton* e);
 	Gtk::ScrolledWindow scwin_;
 };
 

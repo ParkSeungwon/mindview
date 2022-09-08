@@ -1,4 +1,4 @@
-CFLAG = -g -c -std=c++17 -fmax-errors=1 -fPIC
+CFLAG = -g -c -std=c++20 -fmax-errors=1 -fPIC
 INCLUDE = -I../ -I/usr/include/jsoncpp
 GTKCFLAG = $(shell pkg-config gtkmm-3.0 --cflags) #-I$(ROOT)
 CC = g++
